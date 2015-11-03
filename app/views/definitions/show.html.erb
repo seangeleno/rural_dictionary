@@ -1,2 +1,27 @@
-<h1>Definitions#show</h1>
-<p>Find me in app/views/definitions/show.html.erb</p>
+<div class="page-header">
+  <h1><%= @definition.title %><small> <%= @definition.date_published %> </small></h1>
+</div>
+  <p> <%= @definition.body %></p>
+  <% @definition.comments.each do |comment| %>
+  <ul class="list-group">
+    <li class="list-group-item"><%= comment.body %>
+    <small><% if comment.user %>
+            <%= comment.user.email %>
+            <%else %>
+            Anonymous User
+            <%end%>
+    </small></li>
+  </ul>
+  <%end%>
+
+  <div class="">
+    <%= form_for [@definition, Comment.new] do |f| %>
+    <div>
+        <%= f.label :body, "New comment:" %>
+        <%= f.text_area :body %>
+
+    </div>
+
+    <%= f.submit "Add your comment!" %>
+    <% end %>
+  </div>

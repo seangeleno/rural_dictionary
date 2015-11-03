@@ -1,0 +1,40 @@
+<nav class="navbar navbar-fixed-top">
+	<div class="container">
+	<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="brand">
+				<%= link_to "" , root_path , class: 'navbar-brand' %>
+			</div>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<% if current_user %>
+				<ul class="nav navbar-nav navbar-left">
+					<li><%= link_to current_user.name , user_path( current_user.id ) %></li>
+					<li class="userImageLi"><%= link_to (image_tag current_user.avatar.url , class: "userImage" ) , user_path( current_user.id ) %></li>
+					<li><%= link_to 'Log Out', logout_path, :method => :delete %></li>
+				</ul>
+			<% else %>
+				<ul class="nav navbar-nav navbar-left">
+					<li><%= link_to "LOGIN" , user_login_path %></li>
+					<li><%= link_to "SIGN UP" , new_user_path %></li>
+				</ul>
+			<% end %>
+			<ul class="nav navbar-nav navbar-right">
+				<% if current_user %>
+					<li><%= link_to 'New Blog' , new_user_blog_path( current_user.id ) %></li>
+					<% else %>
+					<li><%= link_to "Sign Up To Make a Blog" , new_user_path %></li>
+				<% end %>
+				<li><%= link_to "All Blogs" , all_blogs_path %></li>
+			</ul>
+		</div>
+	</div>
+</nav>

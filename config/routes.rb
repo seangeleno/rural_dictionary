@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'users#index'
+
   get 'definitions/index'
 
   get 'definitions/show'
@@ -20,8 +22,6 @@ Rails.application.routes.draw do
 
   get 'word/create'
 
-  root 'users#index'
-
   resources :users, only: [:new, :index, :create]
 
   get 'users' => 'users#index'
@@ -31,8 +31,7 @@ Rails.application.routes.draw do
   get 'users' => 'users#new'
 
   post 'users' => 'users#create'
-
-
+  
   #sessions routes
   get 'sessions/new'
 
