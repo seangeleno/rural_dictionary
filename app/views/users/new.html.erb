@@ -1,16 +1,7 @@
+<div class="container">
+
 <h1>Dude, Create Your Account Here</h1>
-
-<!-- <%# form_for @user do |form|%>
-  <%# form.text_field :f_name, placeholder: 'Fist Name' %>
-  <%# form.text_field :l_name, placeholder: 'Last Name' %>
-  <%# form.text_field :email, placeholder: 'Email' %>
-  <%# form.password_field :password, placeholder: 'Password Goes Here' %>
-  <%# form.submit %>
-
-
-<%#end%> -->
-
-<h1 class="heading">Sign Up</h1>
+<h2 class="heading">Sign Up</h2>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
   <div class="error_messages">
@@ -39,7 +30,6 @@
     <%= f.submit %>
   </div>
 <% end %>
-
-
+</div>
 
 Hello <%@user.email %>

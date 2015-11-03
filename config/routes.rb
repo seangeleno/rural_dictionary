@@ -1,43 +1,20 @@
 Rails.application.routes.draw do
-
+  #da root!
   root 'users#index'
 
-  get 'definitions/index'
+  #sessions routes! fuck yeah!
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
-  get 'definitions/show'
-
-  get 'definitions/create'
-
-  get 'definitions/new'
-
-  get 'definitions/edit'
-
-  get 'definitions/delete'
-
-  get 'word/index'
-
-  get 'word/show'
-
-  get 'word/new'
-
-  get 'word/create'
+  #users go next -->
+  get 'users' => 'users#index'
+  get 'users/new' => 'users#new'
+  post 'users' => 'users#create'
+  get 'users/:id' => 'users#show', as: :user
+  get'users/:id/edit' => 'users#edit'
+  patch 'users/:id' => 'users#update'
 
   resources :users, only: [:new, :index, :create]
-
-  get 'users' => 'users#index'
-
-  get 'users' => 'users#show'
-
-  get 'users' => 'users#new'
-
-  post 'users' => 'users#create'
-  
-  #sessions routes
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
 
   get 'login' => 'sessions#new'
 
