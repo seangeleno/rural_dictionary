@@ -1,0 +1,8 @@
+<h1>Login Here</h1>
+
+<%= form_for :login do |watermelon|%>
+<%= watermelon.text_field :email, placeholder: 'Email'%><br>
+<%= watermelon.password_field :password, placeholder: 'Password'%><br>
+<%= watermelon.submit 'Login'%><br>
+
+<%end%>
