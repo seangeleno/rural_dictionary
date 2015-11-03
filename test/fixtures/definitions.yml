@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  definition: MyText
+  vote_up: 1
+  vote_down: 1
+
+two:
+  definition: MyText
+  vote_up: 1
+  vote_down: 1
