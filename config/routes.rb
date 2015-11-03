@@ -1,5 +1,25 @@
 Rails.application.routes.draw do
 
+  get 'definitions/index'
+
+  get 'definitions/show'
+
+  get 'definitions/create'
+
+  get 'definitions/new'
+
+  get 'definitions/edit'
+
+  get 'definitions/delete'
+
+  get 'word/index'
+
+  get 'word/show'
+
+  get 'word/new'
+
+  get 'word/create'
+
   root 'users#index'
 
   resources :users, only: [:new, :index, :create]
