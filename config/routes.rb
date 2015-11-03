@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'users#index'
 
   #sessions routes! fuck yeah!
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
   #users go next -->
   get 'users' => 'users#index'
@@ -16,9 +16,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :index, :create]
 
-  get 'login' => 'sessions#new'
-
-  delete "/logout", to: "sessions#destroy"
+  get '/login' => 'sessions#new', as: :sessions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
