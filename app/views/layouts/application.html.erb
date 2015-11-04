@@ -72,13 +72,14 @@
       </form>
 
 
-<%= form_tag sessions_path do %>
-  <% if current_user %>
+
+      <%= form_tag sessions_path do %>
+      <% if current_user %>
     <p> What's up, <%= current_user.email %>, you are signed-in.</p>
     <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'} %>
   <% else %>
-    <%= render 'partials/login' %>
     <%= link_to 'Create New Account', new_user_path %>
+    <%= render 'partials/login' %>
   <% end %>
   <% end %>
 

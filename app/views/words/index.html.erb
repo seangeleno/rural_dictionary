@@ -6,11 +6,11 @@
       </div>
       <div class="panel-body">
 
-        <% user.words.each do |w|%>
+        <% @words.each do |w|%>
       <strong><%= w.word%></strong>
       <% w.definitions.each do |d|%>
       <ul>
-        <li><%= d.text%></li>
+        <li><%= d.definition%></li>
       </ul>
 
       <%end%>
