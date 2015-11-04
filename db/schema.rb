@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103014707) do
+ActiveRecord::Schema.define(version: 20151104231046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,11 @@ ActiveRecord::Schema.define(version: 20151103014707) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.integer  "word_id"
   end
 
   add_index "definitions", ["user_id"], name: "index_definitions_on_user_id", using: :btree
+  add_index "definitions", ["word_id"], name: "index_definitions_on_word_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "f_name"
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(version: 20151103014707) do
   add_index "words", ["user_id"], name: "index_words_on_user_id", using: :btree
 
   add_foreign_key "definitions", "users"
+  add_foreign_key "definitions", "words"
   add_foreign_key "words", "definitions"
   add_foreign_key "words", "users"
 end

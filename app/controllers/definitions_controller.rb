@@ -7,10 +7,11 @@ class DefinitionsController < ApplicationController
 		@definition = Definition.new
 	end
 	def create
+    @user = current_user
 		@definition = @user.definitions.new( definition_params )
 
 	  if @definition.save
-			redirect_to user_path( @user.id )
+			redirect_to user_path( @user )
 		else
 			render :new
 		end

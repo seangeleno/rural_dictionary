@@ -71,16 +71,17 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
 
+
 <%= form_tag sessions_path do %>
   <% if current_user %>
-    <p> What's up, <%= current_user.email %> welcome to your shizznit</p>
+    <p> What's up, <%= current_user.email %>, you are signed-in.</p>
     <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'} %>
   <% else %>
-    <%= link_to 'Please login', sessions_path %>
-    <br>
+    <%= render 'partials/login' %>
     <%= link_to 'Create New Account', new_user_path %>
   <% end %>
   <% end %>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
