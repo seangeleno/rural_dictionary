@@ -1,13 +1,12 @@
 class DefinitionsController < ApplicationController
   def index
-		@definitions = definition.all
+    @users = User.all
+		@definitions = Definition.all
 	end
 	def new
-		logged_user
-		@definition = @user.definitions.new
+		@definition = Definition.new
 	end
 	def create
-		logged_user
 		@definition = @user.definitions.new( definition_params )
 
 	  if @definition.save
@@ -17,37 +16,35 @@ class DefinitionsController < ApplicationController
 		end
 	end
 	def show
-		logged_user
-		@definition = definition.find( params[ :id ] )
+		@definition = Definition.find( params[ :id ] )
 		# @content = @definition.definition
 	end
 	def edit
-		logged_user
-		@definition = definition.find( params[ :id ] )
+		@definition = Definition.find( params[ :id ] )
 		# @content = @definition.content
 	end
 	def update
-		logged_user
-		@definition = definition.find( params[ :id ] )
+
+		@definition = Definition.find( params[ :id ] )
 		if @definition.update_attributes( definition_params )
-			redirect_to user_path( @user.id )
+			redirect_to user_path( current_user)
 		else
 			render :edit
 		end
 	end
 	def destroy
-		logged_user
-		@definition = definition.find( params[ :id ] )
+
+		@definition = Definition.find( params[ :id ] )
 		@definition.destroy
-		redirect_to user_path( @user.id )
+		redirect_to user_path( current_user)
 	end
 
 	private
 	def definition_params
 		params.require( :definition ).permit( :definition , :vote_up , :vote_down )
 	end
-	def logged_user
-		@user = User.find( current_user[ :id ] )
-	end
+	# def logged_user
+	# 	@user = User.find( current_user.id)
+	# end
 
 end
