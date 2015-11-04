@@ -19,12 +19,12 @@ class DefinitionsController < ApplicationController
 	def show
 		logged_user
 		@definition = definition.find( params[ :id ] )
-		@content = @definition.content
+		# @content = @definition.definition
 	end
 	def edit
 		logged_user
 		@definition = definition.find( params[ :id ] )
-		@content = @definition.content
+		# @content = @definition.content
 	end
 	def update
 		logged_user
@@ -44,7 +44,7 @@ class DefinitionsController < ApplicationController
 
 	private
 	def definition_params
-		params.require( :definition ).permit( :content )
+		params.require( :definition ).permit( :definition , :vote_up , :vote_down )
 	end
 	def logged_user
 		@user = User.find( current_user[ :id ] )
