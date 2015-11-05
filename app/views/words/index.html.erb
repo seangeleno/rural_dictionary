@@ -1,8 +1,8 @@
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <% @users.each do |user| %>
-      <h3 class="panel-title"><%= user.f_name %></h3>
+
+      <h3 class="panel-title"></h3>
       </div>
       <div class="panel-body">
 
@@ -16,10 +16,9 @@
         <li>Vote Down:<%= d.vote_down%></li>
         <li><%=link_to "Vote Down", downvote_path(d) %></li>
       </ul>
+      <%end%>
+      <%end%>
 
-      <%end%>
-      <%end%>
-      <%end%>
       <div class="btn-group" role="group" aria-label="...">
   <button type="button" class="btn btn-default">Vote Up</button>
   <button type="button" class="btn btn-default">Vote Down</button>
