@@ -4,6 +4,7 @@ class WordsController < ApplicationController
   end
 
   def show
+    @users = User.all
     @word = Word.find(params[:id])
   end
 

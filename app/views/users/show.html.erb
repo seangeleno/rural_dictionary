@@ -6,18 +6,17 @@
 #want to show all of users definitions here
   <div class="panel panel-default">
     <div class="panel-heading">
-      <% @users.each do |user| %>
-      <h3 class="panel-title"><%= user.f_name %></h3>
+
+      <h3 class="panel-title"><%= @user.f_name %></h3>
     </div>
     <div class="panel-body">
 
-        <% user.words.each do |w|%>
-      <strong><%= w.words%></strong>
+        <% @user.words.each do |w|%>
+      <strong><%= w.word%></strong>
       <% w.definitions.each do |d|%>
       <ul>
-        <li><%= d.text%></li>
+        <li><%= d.definition%></li>
       </ul>
-      <%end%>
       <%end%>
       <%end%>
     </div>
