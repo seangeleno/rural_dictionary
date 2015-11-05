@@ -1,3 +1,4 @@
+<h1>Testing Edit Page</h1>
 <%= form_for @word do |f| %>
     <% if @word.errors.any? %>
         <div id="errors">
@@ -10,12 +11,12 @@
         </div>
     <% end %>
 <div class="panel panel-default">
-  <div class="panel-heading"><strong>Add a new definition</strong></div>
+  <div class="panel-heading"><strong>Edit your definition</strong></div>
   <div class="panel-body">
     <%= f.label :word %><br>
     <%= f.text_field :word %><br>
     <br>
-    <%= fields_for @definition do |ff|%>
+    <%= f.fields_for @definition do |ff|%>
     <%= ff.label :definition %><br>
     <%= ff.text_area :definition %><br>
     <%end%>

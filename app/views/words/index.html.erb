@@ -1,28 +1,23 @@
 <div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">
 
-      <h3 class="panel-title"></h3>
-      </div>
-      <div class="panel-body">
+    <% @words.each do |w|%>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><strong><%= w.word%></strong></h3>
+          <span style="text-align:right;font-size:10px;">Created: <%= w.created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p")%></span>
+        </div>
+        <div class="panel-body">
+    <% w.definitions.each do |d|%>
 
-        <% @words.each do |w|%>
-      <strong><%= w.word%></strong>
-      <% w.definitions.each do |d|%>
-      <ul>
-        <li><%= d.definition%></li>
-        <li>Vote Up:<%= d.vote_up%></li>
-        <li><%=link_to "Vote Up", upvote_path(d) %></li>
-        <li>Vote Down:<%= d.vote_down%></li>
-        <li><%=link_to "Vote Down", downvote_path(d) %></li>
-      </ul>
-      <%end%>
-      <%end%>
 
+      <%= d.definition %>
+      <br>
       <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Vote Up</button>
-  <button type="button" class="btn btn-default">Vote Down</button>
-</div>
-  </div>
-  <%# render 'form_definition' %>
+      <button type="button" class="glyphicon glyphicon-thumbs-up"><%= d.vote_up%><%=link_to "Vote Up", upvote_path(d) %></button>
+      <button type="button" class="glyphicon glyphicon-thumbs-down"><%= d.vote_down%><%=link_to "Vote Down", downvote_path(d) %></button>
+    </div>
+      <%end%>
+    </div>
+    </div>
+      <%end%>
 </div>

@@ -1,9 +1,10 @@
+<h1>Testing Delete Page</h1>
 <div class="container">
   <div class="jumbotron">
     <h1>Hello, <%= @user.email %></h1>
-    <h2>These are your definitions:</h2>
+    <h2>These are your definitions, you can delete them here:</h2>
   </div>
-#want to show all of users definitions here
+#want to show all of users definitions here + delete button
   <div class="panel panel-default">
     <% @user.words.each do |w|%>
     <div class="panel-heading">

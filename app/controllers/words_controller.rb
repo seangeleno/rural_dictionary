@@ -4,16 +4,29 @@ class WordsController < ApplicationController
     @users = User.all
   end
 
-  
+
   def show
     @users = User.all
     @word = Word.find(params[:id])
+  end
+
+  def edit
+    # @users = User.all
+    @word = Word.find(params[:id])
+    @definition = Definition.where({user_id: @word.user.id, word_id: @word.id}).first
   end
 
   def new
     @user = current_user
     @word = Word.new
     @definition = Definition.new
+  end
+
+  def destroy
+    @user = current_user
+    @word = Word.find( params[ :id ] )
+		@word.destroy
+		redirect_to root_path
   end
 
   def create
