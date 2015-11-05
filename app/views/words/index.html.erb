@@ -11,11 +11,19 @@
       <% w.definitions.each do |d|%>
       <ul>
         <li><%= d.definition%></li>
+        <li>Vote Up:<%= d.vote_up%></li>
+        <li><%=link_to "Vote Up", upvote_path(d) %></li>
+        <li>Vote Down:<%= d.vote_down%></li>
+        <li><%=link_to "Vote Down", downvote_path(d) %></li>
       </ul>
 
       <%end%>
       <%end%>
       <%end%>
+      <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">Vote Up</button>
+  <button type="button" class="btn btn-default">Vote Down</button>
+</div>
   </div>
   <%# render 'form_definition' %>
 </div>

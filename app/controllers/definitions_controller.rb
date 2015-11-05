@@ -16,6 +16,18 @@ class DefinitionsController < ApplicationController
 			render :new
 		end
 	end
+  def upvote
+    @definition = Definition.find(params[:id])
+    @definition.vote_up =+ 1
+    @definition.save
+    redirect_to words_path
+  end
+  def downvote
+    @definition = Definition.find(params[:id])
+    @definition.vote_down =+ 1
+    @definition.save
+    redirect_to words_path
+  end
 	def show
 		@definition = Definition.find( params[ :id ] )
 		# @content = @definition.definition

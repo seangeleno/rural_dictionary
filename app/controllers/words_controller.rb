@@ -1,8 +1,10 @@
 class WordsController < ApplicationController
   def index
     @words = Word.all
+    @users = User.all
   end
 
+  
   def show
     @users = User.all
     @word = Word.find(params[:id])
