@@ -1,7 +1,11 @@
 <div class="container">
+  <% if @user==current_user%>
   <div class="jumbotron">
     <h1>Hello, <%= @user.email %></h1>
     <h2>These are your definitions:</h2>
+    <%= link_to "Edit User Profile", edit_user_path(@user) %>
+    <br>
+    <%= link_to "Delete User Account", user_path(@user), method: :delete, data: {confirm: "Are you sure?"} %>
   </div>
 
   <% @user.words.each do |w|%>
@@ -23,5 +27,8 @@
     <%end%>
   </div>
   </div>
+    <%end%>
+    <%else%>
+    This is not your profile.
     <%end%>
 </div>

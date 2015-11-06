@@ -1,5 +1,13 @@
 == README
 
+This is my GA WDI 19 project 2. It uses Ruby on Rails to create a dictionary type app.
+
+I called it rural dictionary.
+
+Five different controllers and three different models were used.
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

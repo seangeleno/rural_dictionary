@@ -9,8 +9,18 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+  
   def edit
-    @user = User.find( current_user[ :id ] )
+    @user = User.find( params[ :id ] )
+  end
+
+  def update
+    @user = User.find( params[ :id ] )
+    if @user.update(user_params)
+      redirect_to user_path( @user )
+    else
+      render "edit"
+    end
   end
 
   def create
@@ -25,6 +35,7 @@ class UsersController < ApplicationController
     def destroy
 		@user = User.find( params[ :id ] )
 		@user.destroy
+    session.delete(:user_id)
 		redirect_to root_path
   end
   private

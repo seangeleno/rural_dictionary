@@ -26,7 +26,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="words/new">New Definition<span class="sr-only">(current)</span></a></li>
+        <li class="active"><%= link_to "New Definition", new_word_path%><span class="sr-only">(current)</span></a></li>
         <%if current_user%>
         <li class="active"><%= link_to 'My Definitions', user_path(current_user) %><span class="sr-only">(current)</span></a></li>
         <% end %>
