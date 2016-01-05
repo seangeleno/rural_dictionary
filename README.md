@@ -25,9 +25,9 @@ Necessary Deliverables
   -  A working full-stack application, built by you, hosted somewhere on the internet
   - A link to your hosted working app in the URL section of your Github repo
   - A git repository hosted on Github, with a link to your hosted project, and frequent commits dating back to the very beginning of the project. Commit early, commit often.
-  - A readme.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
-  - Wireframes of your app, hosted somewhere & linked in your readme
-  - A link in your readme.md to the publically-accessible user stories you created
+  - A README.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
+  - Wireframes of your app, hosted somewhere & linked in your README
+  - A link in your README.md to the publically-accessible user stories you created
 
 Suggested Ways to Get Started
 
@@ -89,56 +89,3 @@ The current plan is to initiation Rural Dictionary as a Git Repository and push 
 ## User Stories
 
 Story 1 - User, Fred, can't find a word in the Oxford English Dictionary, he goes on Rural Dictionary and he finds his definition.
-
-***
-
-* Ruby version
-
-  ** ruby 2.2.1p85 **
-
-* System dependencies
-
-gem 'rails', '4.2.4'
-# Use postgresql as the database for Active Record
-gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-gem 'bootstrap-sass', '~> 3.3.5'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-#Search Bar - Amazon Style
-gem 'elasticsearch', '~> 1.0', '>= 1.0.14'
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-  It is imperative that postgresql be up and runnign prior to the app being able to run.
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
