@@ -14,6 +14,11 @@ class WordsController < ApplicationController
     # @users = User.all
     @word = Word.find(params[:id])
     @definition = Definition.where({user_id: @word.user.id, word_id: @word.id}).first
+    if @word.update
+      redirect_to root_path
+    else
+      render "edit"
+    end
   end
 
   def new
