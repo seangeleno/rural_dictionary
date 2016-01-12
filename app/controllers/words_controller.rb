@@ -41,7 +41,6 @@ class WordsController < ApplicationController
     @definition = @word.definitions.create(definition_params)
     @definition.user = @user
     @definition.save
-    @word.definition_id = @definition.id
     @word.save
     redirect_to root_path
   end
