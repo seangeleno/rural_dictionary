@@ -82,6 +82,19 @@ There will be full CRUD functionality for users for their profiles. Users will b
 - Languages/Technologies Used: Ruby on Rails, Ruby, PostgreSQL, HTML, CSS
 - Additional Technologies: Bootstrap, Github
 
+## Installation
+
+```
+git clone https://www.github.com/seangeleno/rural_dictionary
+```
+
+Start your PostgreSQL database
+
+``` ruby
+rails s
+```
+In your browswer go to: localhost:3000
+
 ## Hosting Site
 
 The current plan is to initiation Rural Dictionary as a Git Repository and push the application to Heroku for public consumption.
