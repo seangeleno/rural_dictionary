@@ -1,6 +1,6 @@
 class WordsController < ApplicationController
   def index
-    @words = Word.all
+    @words = Word.all.order('created_at DESC')
     @users = User.all
   end
 
